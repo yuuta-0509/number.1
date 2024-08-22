@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: solid 0.5px red;
+}
+#all {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+header {
+    width: 100vw;
+    height: 10vh;
+
+}
