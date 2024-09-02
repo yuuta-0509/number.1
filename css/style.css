@@ -1,15 +1,75 @@
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 900
+
+.noto-serif-sc-<uniquifier> {
+  font-family: "Noto Serif SC", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
 * {
     margin: 0;
     padding: 0;
-    border: solid 0.5px red;
+    font-family: "Noto Serif SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
 }
 #all {
     width: 100vw;
     height: 100vh;
     position: fixed;
 }
-header {
+div:not(#all){
+    border: solid white 0.1px;
+}
+.header {
     width: 100vw;
+    height: 6vh;
+    background-color: #0B58F5;
+}
+.middle {
+    width: 100vw;
+    height: 89vh;
+    display: flex;
+}
+.sideber {
+    width: 20vw;
+    height: 89vh;
+    background-color: #6295F8;
+}
+.mainblock {
+    width: 80vw;
+    height: 89vh;
+    background-color: #83ABF9;
+}
+.footer {
+    width: 100vw;
+    height: 5vh;
+    background-color: #0847C7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    width: 20vw;
+    justify-content: space-around;
+}
+nav img {
+    height: 5vh;
+    width: auto;
+    border-radius: 10px;
+}
+.title {
+    width: 20vw;
     height: 10vh;
-
+    background-color: #0B58F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
