@@ -69,6 +69,7 @@ window.addEventListener('load', function() {
                     imgElement.src = image.src;
                     imgElement.alt = image.alt;
                     imgElement.loading = "lazy";
+                    imgElement.id = image.id;
 
                     const infoDiv = document.createElement('div');
                     infoDiv.className = 'info';
@@ -88,5 +89,57 @@ window.addEventListener('load', function() {
             })
             .catch(error => console.error('画像の読み込みエラー:', error));
     }, 2000); 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('gallery');
+
+    gallery.addEventListener('click', function(event) {
+        if (event.target.tagName === 'IMG') {
+            const imageId = event.target.id; 
+        }
+    });
+    gallery.addEventListener('touchend', function(event) {
+
+        if (event.target.tagName === 'IMG') {
+            const imageId = event.target.id; 
+            event.preventDefault(); 
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('gallery');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalComment = document.getElementById('modal-comment');
+    const closeModal = document.getElementById('modal-close');
+
+    gallery.addEventListener('click', function(event) {
+        if (event.target.tagName === 'IMG') {
+            const imageId = event.target.id;
+            // JSONデータから画像情報を取得する処理
+            fetch('public.json')
+                .then(response => response.json())
+                .then(images => {
+                    const imageData = images.find(img => img.id === imageId);
+                    if (imageData) {
+                        modalImage.src = imageData.src;
+                        modalComment.textContent = imageData.comment;
+                        modal.style.display = 'flex'; // モーダルを表示
+                    }
+                })
+                .catch(error => console.error('画像データの取得エラー:', error));
+        }
+    });
+
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none'; // モーダルを非表示
+    });
+
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none'; // モーダルを非表示
+        }
+    });
 });
 

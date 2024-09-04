@@ -8,6 +8,9 @@
   font-style: normal;
 } */
 /* height: calc(var(--vh, 1vh) * 100); */
+body, html {
+    overflow-x: hidden;
+}
 
 * {
     margin: 0;
@@ -23,7 +26,7 @@
     height: 100vh;
     position: fixed;
 }
-div:not(#all,.wrapper,.modal-div){
+div:not(#all,.wrapper,.modal,#caption){
     border: solid white 0.1px;
 }
 .header {
@@ -238,11 +241,40 @@ https://lh3.googleusercontent.com/d/
     width: 100vw;
     height: 100vh;
 }
-.modal-div {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
+
+.modal {
+    display: none; /* 初期状態で非表示 */
+    position: fixed;
     top: 0;
     left: 0;
-}
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+  .modal img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+  }
