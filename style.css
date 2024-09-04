@@ -23,7 +23,7 @@
     height: 100vh;
     position: fixed;
 }
-div:not(#all,.wrapper){
+div:not(#all,.wrapper,.modal-div){
     border: solid white 0.1px;
 }
 .header {
@@ -142,7 +142,6 @@ https://lh3.googleusercontent.com/d/
 
 
 
-
  */
 
 
@@ -238,4 +237,12 @@ https://lh3.googleusercontent.com/d/
 .loading {
     width: 100vw;
     height: 100vh;
+}
+.modal-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
