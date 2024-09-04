@@ -54,6 +54,7 @@ div:not(#all,.wrapper,.modal,#caption){
     height: 89vh;
     background-color: #83ABF9;
     overflow: scroll;
+    position: relative;
 }
 @media screen and (max-width:600px){
     .mainblock {
@@ -78,7 +79,7 @@ nav {
 }
 @media screen and (max-width:600px){
     nav {
-        width: 50vw;
+        width: 90vw;
     }
     
 }
@@ -249,7 +250,7 @@ https://lh3.googleusercontent.com/d/
 }
 
 .modal {
-    display: none; /* 初期状態で非表示 */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -259,31 +260,31 @@ https://lh3.googleusercontent.com/d/
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
+}
 
-  .modal-content {
+.modal-content {
     background: #fff;
     border-radius: 5px;
     padding: 20px;
     max-width: 90vw;
     max-height: 90vh;
     overflow: auto;
-  }
+}
 
-  .modal img {
+.modal img {
     width: 100%;
     height: auto;
     display: block;
-  }
+}
 
-  .close {
+.close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
     cursor: pointer;
     color: #000;
-  }
+}
 
 #reloadButton {
     background-color: white;
@@ -291,4 +292,23 @@ https://lh3.googleusercontent.com/d/
     font-size: bold;
     border: none;
     padding: 3px;
+}
+
+#scrollToTop {
+    position: absolute;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
 }

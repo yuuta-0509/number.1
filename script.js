@@ -1,43 +1,4 @@
 
-
-// fetch('public.json')
-// .then(response => response.json())
-// .then(images => {
-//     const gallery = document.getElementById('gallery');
-//     images.forEach(image => {
-//         const item = document.createElement('div');
-//         item.className = 'gallery-item';
-
-//         const imgElement = document.createElement('img');
-//         imgElement.src = image.src;
-//         imgElement.alt = image.alt;
-//         imgElement.loading = "lazy";
-
-//         const infoDiv = document.createElement('div');
-//         infoDiv.className = 'info';
-
-//         const commentElement = document.createElement('div');
-//         commentElement.className = 'comment';
-//         commentElement.textContent = image.comment;
-//         infoDiv.appendChild(commentElement);
-//         item.appendChild(imgElement);
-//         item.appendChild(infoDiv);
-//         gallery.appendChild(item);
-//     });
-// })
-// .catch(error => console.error('画像の読み込みエラー:', error));
-
-
-// window.addEventListener('load', function() {
-//     const loading = document.getElementById('loading');
-//     const content = document.getElementById('content');
-//     setTimeout(function() {
-//         loading.style.display = 'none';
-//         content.style.display = 'block';
-//     }, 2000)
-// });
-
-
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -117,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gallery.addEventListener('click', function(event) {
         if (event.target.tagName === 'IMG') {
             const imageId = event.target.id;
-            // JSONデータから画像情報を取得する処理
+
             fetch('public.json')
                 .then(response => response.json())
                 .then(images => {
@@ -125,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (imageData) {
                         modalImage.src = imageData.src;
                         modalComment.textContent = imageData.comment;
-                        modal.style.display = 'flex'; // モーダルを表示
+                        modal.style.display = 'flex'; 
                     }
                 })
                 .catch(error => console.error('画像データの取得エラー:', error));
@@ -133,17 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     closeModal.addEventListener('click', function() {
-        modal.style.display = 'none'; // モーダルを非表示
+        modal.style.display = 'none'; 
     });
 
     modal.addEventListener('click', function(event) {
         if (event.target === modal) {
-            modal.style.display = 'none'; // モーダルを非表示
+            modal.style.display = 'none'; 
         }
     });
 });
 
-// script.js
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js')
@@ -159,6 +119,17 @@ if ('serviceWorker' in navigator) {
 document.getElementById('reloadButton').addEventListener('click', function() {
     location.reload();
 });
+
+const scrollableContainer = document.getElementById('mainblock');
+
+function scrollToTop() {
+    scrollableContainer.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+}
+document.getElementById('scrollToTop').addEventListener('click', scrollToTop);
+
 
   
 
