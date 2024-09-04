@@ -143,6 +143,13 @@ nav img {
 https://lh3.googleusercontent.com/d/
 
 
+    {
+        "src" : "https://lh3.googleusercontent.com/d/",
+        "alt" : "image-",
+        "comment" : "",
+        "user" : "",
+        "id" : ""
+    }
 
  */
 
@@ -277,3 +284,11 @@ https://lh3.googleusercontent.com/d/
     cursor: pointer;
     color: #000;
   }
+
+#reloadButton {
+    background-color: white;
+    color: black;
+    font-size: bold;
+    border: none;
+    padding: 3px;
+}

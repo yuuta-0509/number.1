@@ -155,5 +155,10 @@ if ('serviceWorker' in navigator) {
         });
     });
   }
+
+document.getElementById('reloadButton').addEventListener('click', function() {
+    location.reload();
+});
+
   
 
