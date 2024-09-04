@@ -26,3 +26,12 @@ fetch('public.json')
     });
 })
 .catch(error => console.error('画像の読み込みエラー:', error));
+
+
+window.addEventListener('load', function() {
+    const loading = document.getElementById('loading');
+    const content = document.getElementById('content');
+
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
