@@ -23,7 +23,7 @@
     height: 100vh;
     position: fixed;
 }
-div:not(#all){
+div:not(#all,.wrapper){
     border: solid white 0.1px;
 }
 .header {
@@ -153,7 +153,6 @@ https://lh3.googleusercontent.com/d/
     left:50%;
     top:50%;
     transform: translate(-50%, -50%);
-    border: none;
 }
 .circle{
     width:20px;

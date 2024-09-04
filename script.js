@@ -31,7 +31,8 @@ fetch('public.json')
 window.addEventListener('load', function() {
     const loading = document.getElementById('loading');
     const content = document.getElementById('content');
-
-    loading.style.display = 'none';
-    content.style.display = 'block';
+    setTimeout(function() {
+        loading.style.display = 'none';
+        content.style.display = 'block';
+    }, 2000)
 });
