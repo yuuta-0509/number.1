@@ -51,6 +51,7 @@ div:not(#all){
     width: 80vw;
     height: 89vh;
     background-color: #83ABF9;
+    overflow: scroll;
 }
 @media screen and (max-width:600px){
     .mainblock {
@@ -134,3 +135,11 @@ nav img {
         column-count: 1;
     }
 }
+
+/* 
+https://lh3.googleusercontent.com/d/
+
+
+
+
+ */
